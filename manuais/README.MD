@@ -1,3 +1,3 @@
-## Esta pasta é reservada para os manuais.
+## Esta pasta é reservada para os manuais. Preferecialmente em PDF.
 
 🤟
