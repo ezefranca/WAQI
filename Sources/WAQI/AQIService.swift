@@ -4,7 +4,7 @@ import Foundation
 @available(macOS 12.0, *)
 public class AQIService: AQIServiceProtocol {
 
-    private let baseURL = URL(string: "https://api.waqi.info/v2")!
+    private let baseURL = URL(string: "https://api.waqi.info/")!
     private let token: String
 
     public init(token: String) {
