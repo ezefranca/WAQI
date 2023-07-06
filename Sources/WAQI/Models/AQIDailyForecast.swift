@@ -1,5 +1,5 @@
 import Foundation
 
-struct AQIDailyForecast: Decodable {
+public struct AQIDailyForecast: Decodable {
     let pm25: AQIForecastValue
 }

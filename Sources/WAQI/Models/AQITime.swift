@@ -1,6 +1,6 @@
 import Foundation
 
-struct AQITime: Decodable {
+public struct AQITime: Decodable {
     let s: String
     let tz: String
 }

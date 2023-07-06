@@ -1,6 +1,6 @@
 import Foundation
 
-struct AQICity: Decodable {
+public struct AQICity: Decodable {
     let name: String
     let geo: [Double]
     let url: String

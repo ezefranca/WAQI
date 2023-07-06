@@ -1,6 +1,6 @@
 import Foundation
 
-enum AQIServiceError: Error {
+public enum AQIServiceError: Error {
     case invalidURL
     case requestFailed
     case responseError(Error)

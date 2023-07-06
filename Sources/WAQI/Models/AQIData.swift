@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - AQIData
 
-struct AQIData: Decodable {
+public struct AQIData: Decodable {
     let idx: Int
     let aqi: Int
     let time: AQITime

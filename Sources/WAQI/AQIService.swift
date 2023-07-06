@@ -1,36 +1,37 @@
 import Foundation
 
+@available(iOS 15.0, *)
 @available(macOS 12.0, *)
-class AQIService: AQIServiceProtocol {
+public class AQIService: AQIServiceProtocol {
 
     private let baseURL = URL(string: "https://api.waqi.info/v2")!
     private let token: String
 
-    init(token: String) {
+    public init(token: String) {
         self.token = token
     }
 
-    func getAQI(for city: String) async throws -> AQIResponse {
+    public func getAQI(for city: String) async throws -> AQIResponse {
         let router = AQIRouter.city(city, token)
         return try await fetchData(from: router.url)
     }
 
-    func getGeolocalizedAQI(lat: Double, lng: Double) async throws -> AQIResponse {
+    public func getGeolocalizedAQI(lat: Double, lng: Double) async throws -> AQIResponse {
         let router = AQIRouter.geolocalized(lat, lng, token)
         return try await fetchData(from: router.url)
     }
 
-    func getGeolocalizedAQIUsingIP() async throws -> AQIResponse {
+    public func getGeolocalizedAQIUsingIP() async throws -> AQIResponse {
         let router = AQIRouter.geolocalizedIP(token)
         return try await fetchData(from: router.url)
     }
 
-    func getStationsInBounds(lat1: Double, lng1: Double, lat2: Double, lng2: Double) async throws -> AQIResponse {
+    public func getStationsInBounds(lat1: Double, lng1: Double, lat2: Double, lng2: Double) async throws -> AQIResponse {
         let router = AQIRouter.mapBounds(lat1, lng1, lat2, lng2, token)
         return try await fetchData(from: router.url)
     }
 
-    func searchStations(by keyword: String) async throws -> [AQIStation] {
+    public func searchStations(by keyword: String) async throws -> [AQIStation] {
         let router = AQIRouter.search(keyword, token)
         let response: SearchResponse = try await fetchData(from: router.url)
         return response.data

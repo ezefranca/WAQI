@@ -1,5 +1,5 @@
 import Foundation
 
-struct AQIValue: Decodable {
+public struct AQIValue: Decodable {
     let v: Int
 }

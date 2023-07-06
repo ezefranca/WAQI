@@ -1,5 +1,5 @@
 import Foundation
 
-struct AQIIAQ: Decodable {
+public struct AQIIAQ: Decodable {
     let pm25: AQIValue
 }
