@@ -57,7 +57,7 @@ enum AQIRouter: APIRouter {
     case search(String, String)
 
     var baseURL: URL {
-        return URL(string: "https://api.waqi.info/v2")!
+        return URL(string: "https://api.waqi.info/")!
     }
 
     var path: String {
